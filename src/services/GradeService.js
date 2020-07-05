@@ -1,7 +1,12 @@
 import http from '../http-common';
 
 const getAll = () => {
-  return http.get('/grade');
+  try {
+    console.log('App- Acessou Get All');
+    return http.get('/grade');
+  } catch (err) {
+    console.log('App - Get All - Erro:' + err.message);
+  }
 };
 
 const get = (id) => {
